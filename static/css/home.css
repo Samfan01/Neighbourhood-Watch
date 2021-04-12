@@ -1,12 +1,27 @@
-.home{
-    background-image: url(../images/The_Neighborhood_\(TV_series\)_Title_Card.jpg);
+/* .home{ */
+    /* background-image: url(../images/The_Neighborhood_\(TV_series\)_Title_Card.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
     opacity: 0.6;
     height: 700px;
+    
+} */
+.home {
+    position: relative;
+    text-align: center;
+    color: white;
+    
 }
+.centered {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    font-family: 'Bangers', cursive;
+    text-align: center;
+}
+
 .footer{
     text-align: center;
 }

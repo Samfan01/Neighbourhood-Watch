@@ -10,6 +10,7 @@ class Neighbourhood(models.Model):
     neighbouhood_name = models.CharField(max_length = 90)
     neighbouhood_location = models.CharField(max_length = 90)
     occupants = models.CharField(max_length = 90)
+    neighbouhood_image = models.ImageField(upload_to = 'hood/')
 
     def __str__(self):
         return self.neighbouhood_name
@@ -56,4 +57,12 @@ class Post(models.Model):
     post_title = models.CharField(max_length = 90)
     post_description = models.TextField()
     post_image = models.ImageField(upload_to = 'neighbour/')
-    post_date = models.DateTimeField(auto_now_add =True)        
+    post_date = models.DateTimeField(auto_now_add =True)  
+    
+    def __str__(self):
+        return self.post_title      
+    
+    def save_post(self):
+        self.save()
+        
+    
