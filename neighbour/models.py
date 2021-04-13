@@ -68,6 +68,7 @@ class Post(models.Model):
 
 
 class Health(models.Model):
+    facility_image = models.ImageField(upload_to = 'health/')
     facility_name = models.CharField(max_length = 90) 
     facility_location = models.CharField(max_length = 90)  
     neighbourhood = models.ForeignKey('NeighbourHood',on_delete=models.CASCADE,related_name='health')
@@ -77,4 +78,15 @@ class Health(models.Model):
     
     def save_health(self):
         self.save()  
+    
+class Authorities(models.Model):
+    authority_name = models.CharField(max_length = 90)
+    authority_location = models.CharField(max_length = 90)
+    authority_image = models.ImageField(upload_to = 'authority/')
+    
+    def __str__(self):
+        return self.authority_name
+    
+    def save_authority(self):
+        self.save()
     
