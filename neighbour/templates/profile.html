@@ -13,15 +13,21 @@
 
 {% endblock %}
 <div class="container-fluid">
-    <div class="jumbotron" id="profile">
+    <div class="profile">
         <div class="col-md-4">
             <img src="{{user.profile.profile_pic.url}}" class="img-thumbnail" alt="pic">
+            <br>
+            <strong><p>{{user.username}}</p></strong>
         </div>
-        <div class="col-md-6">
-
+        <div class="col-md-6" style="text-align: left;">
+            <h4><strong>Name : </strong>{{user.profile.name}}</h4>
+            <h4><strong>Email : </strong>{{user.profile.email}}</h4>
+            <h4><strong>Neighbourhood : </strong>{{user.profile.name}}</h4>
         </div>
         <div class="col-md-2"></div>
+        <hr>
     </div>
+    
 
 </div>
 

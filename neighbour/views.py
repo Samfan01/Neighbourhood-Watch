@@ -16,3 +16,20 @@ def profile(request):
     
     
     return render(request,template_name)
+
+
+def update_profile(request):
+    model = Profile
+    form = ProfileForm
+    if request.method == 'POST':
+        form = ProfileForm(request.POST,request.FILES,instance=request.user.profile)
+        if form.is_valid():
+            post = form.save(commit=False)      
+            post.save()
+        return redirect('profile')
+    else:
+        form = ProfileForm
+   
+    template_name = 'update_profile.html',
+    
+    return render(request,template_name,{'form':form})
