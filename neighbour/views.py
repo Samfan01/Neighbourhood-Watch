@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from .models import *
 from .forms import *
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -34,7 +35,7 @@ def update_profile(request):
     template_name = 'update_profile.html',
     
     return render(request,template_name,{'form':form})
-
+@login_required(login_url='/accounts/login/')
 def hood(request,neighbourhood_id):
     neighbourhood = get_object_or_404(NeighbourHood, id=neighbourhood_id)
     user = request.user.profile
