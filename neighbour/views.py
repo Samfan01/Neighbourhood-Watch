@@ -45,3 +45,19 @@ def hood(request,neighbourhood_id):
     
     
     return render(request,template_name,{'neighbourhood':neighbourhood,'health':health,'authority':authority})
+
+def new_post(request):
+    model = Post
+    
+    template_name = 'new_post.html',
+    if request.method == 'POST':
+        form = NewProjectForm(request.POST,request.FILES)
+        if form.is_valid():
+            form = form.save(commit=False)
+            form.user = request.user.profile
+            form.save()
+            return redirect('home')
+    else:
+        form = NewProjectForm()
+        
+    return render(request,template_name,{'form':form})
