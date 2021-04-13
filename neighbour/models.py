@@ -6,7 +6,7 @@ from django.core.exceptions import ObjectDoesNotExist
 
 
 # Create your models here.
-class Neighbourhood(models.Model):
+class NeighbourHood(models.Model):
     neighbouhood_name = models.CharField(max_length = 90)
     neighbouhood_location = models.CharField(max_length = 90)
     occupants = models.CharField(max_length = 90)
@@ -26,7 +26,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User,on_delete=models.CASCADE,related_name='profile')
     name = models.CharField(max_length = 90)
     email = models.EmailField()
-    neighbouhood_id = models.ForeignKey('NeighbourHood',on_delete=models.CASCADE,related_name = 'profile')
+    neighbouhood_id = models.ForeignKey('NeighbourHood',on_delete=models.CASCADE,related_name = 'profile',null=True)
     
     @receiver(post_save, sender=User)
     def user_profile(sender,instance,created, **kwargs):
