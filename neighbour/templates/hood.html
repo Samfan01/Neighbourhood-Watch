@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+{% load static %}
+
+
+{% block content %}
+{{block.super}}
+{% include 'navbar.html' %}
+{% block styles %}
+{% bootstrap_css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+
+{% endblock %}
+<div class="container-fluid">
+    <div class="home">
+        <img src="{{ neighbourhood.neighbourhood_image.url }}" alt="neighbourhood" style="width:100%; height: 600px;">
+        <h1 class="centered" id="heading">Welcome to the {{neighbourhood.neighbourhood_name}} hood</h1>
+        <br>
+        <small class="centered" style="font-size: large;"><strong>By:</strong>{{neighbourhood.neighbourhood_location}}</small>
+        </div>
+<div class="container-fluid">
+    <h1 class="text-center" style="font-family: 'Bangers', cursive;">Recent posts for {{neighbourhood.neighbourhood_name}} hood</h1>
+</div>
+{%endblock%}

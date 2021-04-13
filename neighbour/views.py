@@ -36,8 +36,8 @@ def update_profile(request):
     return render(request,template_name,{'form':form})
 
 def hood(request,neighbourhood_id):
-    neighbourhoods = get_object_or_404(NeighbourHood, id=neighbourhood_id)
+    neighbourhood = get_object_or_404(NeighbourHood, id=neighbourhood_id)
     user = request.user.profile
     template_name = 'hood.html'
     
-    return render(request,template_name)
+    return render(request,template_name,{'neighbourhood':neighbourhood})

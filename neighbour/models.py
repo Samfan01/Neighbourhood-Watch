@@ -65,5 +65,16 @@ class Post(models.Model):
     
     def save_post(self):
         self.save()
+
+
+class Health(models.Model):
+    facility_name = models.CharField(max_length = 90) 
+    facility_location = models.CharField(max_length = 90)  
+    neighbourhood = models.ForeignKey('NeighbourHood',on_delete=models.CASCADE,related_name='health')
         
+    def __str__(self):
+        return self.facility_name
+    
+    def save_health(self):
+        self.save()  
     
