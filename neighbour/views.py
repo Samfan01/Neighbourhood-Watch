@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import *
+from .forms import *
 
 # Create your views here.
 
@@ -33,3 +34,10 @@ def update_profile(request):
     template_name = 'update_profile.html',
     
     return render(request,template_name,{'form':form})
+
+def hood(request,neighbourhood_id):
+    neighbourhoods = get_object_or_404(NeighbourHood, id=neighbouhood_id)
+    user = request.user.profile
+    template_name = 'hood.html'
+    
+    return render(request,template_name)

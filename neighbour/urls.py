@@ -4,9 +4,11 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 
+
 urlpatterns=[
     path('',views.home,name = 'home'),
     path('profile',views.profile,name = 'profile'),
+    path('update_profile',views.update_profile,name = 'update_profile'),
 ]
 
 if settings.DEBUG:

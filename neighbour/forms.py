@@ -10,5 +10,5 @@ class ProfileForm(forms.ModelForm):
         
         widgets = {
             'email': forms.TextInput(attrs = {'class': 'form-control'}),
-            'name': forms.TextaInput(attrs = {'class': 'form-control'}),
+            'name': forms.TextInput(attrs = {'class': 'form-control'}),
         }
