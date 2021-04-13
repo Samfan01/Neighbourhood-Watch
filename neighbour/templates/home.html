@@ -23,8 +23,8 @@
         <h1 class="text-center" style="font-family: 'Bangers', cursive;">Listed Hoods</h1>
         {% for neighbourhood in neighbourhoods %}
         <div class="col-md-4" >
-            <div class="card" >
-                <img src="{{ neighbourhood.neighbourhood_image.url }}" alt="Denim Jeans" style="width:100%" class="img-rounded">
+            <div class="card"  >
+                <img src="{{ neighbourhood.neighbourhood_image.url }}" style="width:100%; height: 500px;" class="img-rounded" >
                 <h1><strong>Name:</strong>{{neighbourhood.neighbourhood_name}}</h1>
                 <p class="count"><strong>Occupants:</strong>{{neighbourhood.occupants}}</p>
                 <p><strong>Location:</strong>{{neighbourhood.neighbourhood_location}}</p>
