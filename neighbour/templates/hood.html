@@ -25,34 +25,41 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-6">
             <h1 class="text-center" style="font-family: 'Bangers', cursive;">Health Facilities for
                 {{neighbourhood.neighbourhood_name}} hood</h1>
 
             {% for health in health %}
-            <div class="card" style="width: 18rem;">
-                <img src="{{health.facility_image.url}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{health.facility_name}}</h5>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="row">
+                <div class="col-sm-6 col-md-6">
+                  <div class="thumbnail">
+                    <img src="{{health.facility_image.url}}" alt="...">
+                    <div class="caption">
+                      <small><h3><strong>Facilityname</strong>{{health.facility_name}}</h3></small>
+                      <h3><strong>Facility location:</strong>{{health.facility_location}}</h3>
+                      
+                    </div>
+                  </div>
                 </div>
-            </div>
-
-            {% endfor %}
+              </div>
+              {% endfor %}
         </div>
-        <div class="col-md-8">
-            <h1 class="text-center" style="font-family: 'Bangers', cursive;">Authorities at
-                {{neighbourhood.neighbourhood_name}} hood</h1>
+        <div class="col-md-6">
+            <h1 class="text-center" style="font-family: 'Bangers', cursive;">Authorities at{{neighbourhood.neighbourhood_name}} hood</h1>
 
             {% for authority in authority %}
-            <div class="card" style="width: 18rem;">
-                <img src="{{health.authority_image.url}}" class="card-img-top img-circle" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{health.authority_name}}</h5>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="row">
+                <div class="col-sm-6 col-md-6">
+                  <div class="thumbnail">
+                    <img src="{{authority.authority_image.url}}" alt="...">
+                    <div class="caption">
+                      <small><h3><strong>Authority:</strong>{{health.facility_name}}</h3></small>
+                      <h3><strong>Authority location:</strong>{{health.facility_location}}</h3>
+                      
+                    </div>
+                  </div>
                 </div>
-            </div>
-
+              </div>
 
             {% endfor %}
         </div>
