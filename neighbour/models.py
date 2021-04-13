@@ -7,13 +7,13 @@ from django.core.exceptions import ObjectDoesNotExist
 
 # Create your models here.
 class NeighbourHood(models.Model):
-    neighbouhood_name = models.CharField(max_length = 90)
-    neighbouhood_location = models.CharField(max_length = 90)
+    neighbourhood_name = models.CharField(max_length = 90)
+    neighbourhood_location = models.CharField(max_length = 90)
     occupants = models.CharField(max_length = 90)
-    neighbouhood_image = models.ImageField(upload_to = 'hood/')
+    neighbourhood_image = models.ImageField(upload_to = 'hood/')
 
     def __str__(self):
-        return self.neighbouhood_name
+        return self.neighbourhood_name
     
     def create_neighbourhood(self):
         self.save()

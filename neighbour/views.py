@@ -8,4 +8,4 @@ def home(request):
     template_name = 'home.html'
     neighbourhoods = NeighbourHood.objects.all()
     
-    return render(request,template_name,{'title':title,'neghbourhoods':neighbourhoods})
+    return render(request,template_name,{'title':title,'neighbourhoods':neighbourhoods})

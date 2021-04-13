@@ -19,9 +19,9 @@
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Hoods<span
             class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Page 1-1</a></li>
-          <li><a href="#">Page 1-2</a></li>
-          <li><a href="#">Page 1-3</a></li>
+          {% for neighbourhood in neighbourhoods %}
+          <li><a href="#">{{neighbourhood.neighbourhood_name}}</a></li>
+         {% endfor %}
         </ul>
       </li>
       <li class=""><a href=""> <span class="glyphicon glyphicon-user"> Profile</span></a></li>
