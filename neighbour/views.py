@@ -51,13 +51,13 @@ def new_post(request):
     
     template_name = 'new_post.html',
     if request.method == 'POST':
-        form = NewProjectForm(request.POST,request.FILES)
+        form = PostForm(request.POST,request.FILES)
         if form.is_valid():
             form = form.save(commit=False)
             form.user = request.user.profile
             form.save()
             return redirect('home')
     else:
-        form = NewProjectForm()
+        form = PostForm()
         
     return render(request,template_name,{'form':form})
