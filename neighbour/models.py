@@ -27,6 +27,7 @@ class Profile(models.Model):
     name = models.CharField(max_length = 90)
     email = models.EmailField()
     neighbouhood_id = models.ForeignKey('NeighbourHood',on_delete=models.CASCADE,related_name = 'profile',null=True)
+    profile_pic = models.ImageField(upload_to = 'profile',default='download.jpeg',blank=True,null=True)
     
     @receiver(post_save, sender=User)
     def user_profile(sender,instance,created, **kwargs):
