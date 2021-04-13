@@ -21,6 +21,20 @@
         <small class="centered" style="font-size: large;"><strong>By:</strong>{{neighbourhood.neighbourhood_location}}</small>
         </div>
 <div class="container-fluid">
-    <h1 class="text-center" style="font-family: 'Bangers', cursive;">Recent posts for {{neighbourhood.neighbourhood_name}} hood</h1>
+    <h1 class="text-center" style="font-family: 'Bangers', cursive;">Health Facilities for {{neighbourhood.neighbourhood_name}} hood</h1>
+
+    {% for health in health %}
+    <div class="card" style="width: 18rem;">
+        <img src="{{health.facility_image.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{health.facility_name}}</h5>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+    {% endfor %}
+
 </div>
+
+
 {%endblock%}

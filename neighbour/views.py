@@ -39,5 +39,8 @@ def hood(request,neighbourhood_id):
     neighbourhood = get_object_or_404(NeighbourHood, id=neighbourhood_id)
     user = request.user.profile
     template_name = 'hood.html'
+    health = Health.objects.filter(neighbourhood=neighbourhood_id)
+    authority = Authorities.objects.filter(neighbourhood=neighbourhood_id)
     
-    return render(request,template_name,{'neighbourhood':neighbourhood})
+    
+    return render(request,template_name,{'neighbourhood':neighbourhood,'health':health,'authority':authority})

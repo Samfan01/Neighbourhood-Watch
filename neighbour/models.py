@@ -83,6 +83,7 @@ class Authorities(models.Model):
     authority_name = models.CharField(max_length = 90)
     authority_location = models.CharField(max_length = 90)
     authority_image = models.ImageField(upload_to = 'authority/')
+    neighbourhood = models.ForeignKey('NeighbourHood',on_delete=models.CASCADE,related_name='authority')
     
     def __str__(self):
         return self.authority_name
