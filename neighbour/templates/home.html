@@ -19,9 +19,23 @@
         <h1 class="centered" id="heading">Know Your Neighbourhood</h1>
        
         </div>
+
+        <h1 class="text-center" style="font-family: 'Bangers', cursive;">Listed Hoods</h1>
+        {% for neighbourhood in neighbourhoods %}
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{{ neighbourhood.neighbourhood_image.url }}" alt="Denim Jeans" style="width:100%" class="img-rounded">
+                <h1>Tailored Jeans</h1>
+                <p class="price">$19.99</p>
+                <p>Some text about the jeans..</p>
+                <p><button>Add to Cart</button></p>
+              </div>
+
+        </div>
+        {% endfor%}
     </div>
-</div>
-</div>
+
+
 
 
 {% endblock %}
