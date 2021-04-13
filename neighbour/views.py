@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,get_object_or_404
 from .models import *
 from .forms import *
 
@@ -36,7 +36,7 @@ def update_profile(request):
     return render(request,template_name,{'form':form})
 
 def hood(request,neighbourhood_id):
-    neighbourhoods = get_object_or_404(NeighbourHood, id=neighbouhood_id)
+    neighbourhoods = get_object_or_404(NeighbourHood, id=neighbourhood_id)
     user = request.user.profile
     template_name = 'hood.html'
     

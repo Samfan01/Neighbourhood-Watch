@@ -9,6 +9,7 @@ urlpatterns=[
     path('',views.home,name = 'home'),
     path('profile',views.profile,name = 'profile'),
     path('update_profile',views.update_profile,name = 'update_profile'),
+    path('hood/<int:neighbourhood_id>/',views.hood,name='hood')
 ]
 
 if settings.DEBUG:
