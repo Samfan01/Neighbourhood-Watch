@@ -9,3 +9,10 @@ def home(request):
     neighbourhoods = NeighbourHood.objects.all()
     
     return render(request,template_name,{'title':title,'neighbourhoods':neighbourhoods})
+
+def profile(request):
+    template_name = 'profile.html'
+    
+    
+    
+    return render(request,template_name)
